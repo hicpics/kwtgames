@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical design work on Breaker&#x27;s World, a third-person shooter: Unreal Sequencer cutscenes, worldspace UI, and adaptive audio.">
+  <meta name="theme-color" content="#0b0c0f">
+  <title>Breaker&#x27;s World — Kevin Tollison</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">Kevin Tollison</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#early">Early Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/kevintollison" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="project-header">
+      <div class="wrap">
+        <a class="back" href="../index.html">← All work</a>
+        <h1>Breaker's World</h1>
+        <p class="role-line">Technical Designer  ·  Third-Person Shooter</p>
+      </div>
+    </header>
+    <div class="project-body">
+      <div class="wrap">
+
+        <img src="../assets/img/breakers-world/hero.webp" alt="Title still from Breaker&#x27;s World, an outpost under an orange sky." width="1600" height="900" class="hero-img">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/3uxDYA-6Jwk" title="Breaker&#x27;s World" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <h2>Project Overview</h2>
+        <p>Breaker's World is a third-person shooter inspired by the pacing and structure of Mass Effect 1. I joined the team in a technical design role to help build narrative sequences, polish gameplay transitions, and support key systems late in development. The team was around 10–15 people.</p>
+        <p>My work focused on implementing cutscenes, scripting interactions, building worldspace UI, and integrating audio with adaptive systems. This required fast iteration with limited tools and assets, and rapid skill-up in Unreal Sequencer.</p>
+        <h2>Cutscenes &amp; Narrative Sequences</h2>
+        <p>I built a wide range of in-engine cutscenes using Unreal Sequencer, including:</p>
+        <ul>
+          <li>Story-driven moments</li>
+          <li>NPC interactions</li>
+          <li>Level transitions</li>
+          <li>Marketing videos for promotional use</li>
+        </ul>
+        <p>This work included:</p>
+        <ul>
+          <li>Trigger placement</li>
+          <li>Dialogue timing</li>
+          <li>Camera setup and blending</li>
+          <li>Animation syncing</li>
+          <li>Visual callouts / staging</li>
+          <li>Integrating SFX and music cues</li>
+          <li>Delivering clean, reusable sequences under tight production timelines</li>
+        </ul>
+        <p>Assets were limited, so camera work, timing, and staging had to carry the emotional weight of narrative beats.</p>
+        <p class="note">A raw cinematic for Level 1 Fire Hall was on the original page. The video file was not in this archive; the YouTube links below were.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/0XrIhRqtFoI" title="Breaker&#x27;s World" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Skok9lztNPg" title="Breaker&#x27;s World" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/udGjmVR_1B8" title="Breaker&#x27;s World" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="clip-row">
+          <figure class="clip"><video autoplay loop muted playsinline preload="metadata" aria-label="Ship flyover"><source src="../assets/img/breakers-world/ship-flyover.mp4" type="video/mp4"></video><figcaption>Ship flyover</figcaption></figure>
+          <figure class="clip"><video autoplay loop muted playsinline preload="metadata" aria-label="NPC conversation"><source src="../assets/img/breakers-world/npc-conversation.mp4" type="video/mp4"></video><figcaption>NPC conversation</figcaption></figure>
+          <figure class="clip"><video autoplay loop muted playsinline preload="metadata" aria-label="Player exiting a ship"><source src="../assets/img/breakers-world/player-exit-ship.mp4" type="video/mp4"></video><figcaption>Player exiting a ship</figcaption></figure>
+          <figure class="clip"><video autoplay loop muted playsinline preload="metadata" aria-label="Engine room"><source src="../assets/img/breakers-world/engine-room-player.mp4" type="video/mp4"></video><figcaption>Engine room</figcaption></figure>
+        </div>
+        <div class="still-row">
+          <figure class="still-frame"><img src="../assets/img/breakers-world/fire-hall.webp" alt="Gameplay still from Breaker&#x27;s World: a character facing a wall of fire in a corridor." width="1164" height="598" loading="lazy"></figure>
+          <figure class="still-frame"><img src="../assets/img/breakers-world/engine-room.webp" alt="Gameplay still from Breaker&#x27;s World: a character in a tight interior with control panels." width="1164" height="566" loading="lazy"></figure>
+        </div>
+        <h2>Worldspace UI – 3D Level Selector</h2>
+        <p>I built an in-world level selector using worldspace UI to keep the game immersive. This included:</p>
+        <ul>
+          <li>Scripting navigation and level loading</li>
+          <li>Setting up UI interactions in 3D space</li>
+          <li>Implementing VFX to support feedback</li>
+          <li>Ensuring everything worked smoothly in real-time gameplay</li>
+        </ul>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/36NqlGJYdlc" title="Breaker&#x27;s World worldspace UI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <h2>Audio Implementation</h2>
+        <p>I handled technical audio integration across:</p>
+        <ul>
+          <li>SFX placement</li>
+          <li>Adaptive music systems</li>
+          <li>State/transition triggers</li>
+          <li>Blend behavior during cutscenes and gameplay</li>
+        </ul>
+        <p>I worked directly with the composer to ensure their music functioned as intended in-engine, helping shape transitions, layering, and timing.</p>
+        <p>Audio felt significantly more dynamic and connected to player actions after the implementation pass.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pg-LOvSRHIA" title="Breaker&#x27;s World audio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/6rFr6aIcTnE" title="Breaker&#x27;s World audio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/7gBMKbbjBzc" title="Breaker&#x27;s World audio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <h2>Production Constraints</h2>
+        <p>This project came with meaningful challenges:</p>
+        <ul>
+          <li>Limited tools</li>
+          <li>No dedicated technical designer initially</li>
+          <li>Tight deadlines</li>
+          <li>Real-time implementation requirements</li>
+          <li>Limited assets for cutscenes (staging had to do heavy lifting)</li>
+          <li>I had to learn Unreal Sequencer immediately and produce usable work within days</li>
+        </ul>
+        <p>These constraints shaped the approach: fast iteration, flexible solutions, and clean handoffs to other departments.</p>
+        <h2>Impact</h2>
+        <p>The work I contributed helped improve:</p>
+        <ul>
+          <li>Narrative clarity through polished cutscenes</li>
+          <li>Player experience via clean level transitions</li>
+          <li>Audio responsiveness, thanks to adaptive systems</li>
+          <li>Visual readability of UI and feedback</li>
+          <li>Overall production efficiency with reusable sequencing setups</li>
+        </ul>
+        <p>Internal feedback noted stronger polish and better flow between gameplay and story moments.</p>
+        <h2>What I Learned</h2>
+        <ul>
+          <li>Building cinematic sequences quickly in Unreal Sequencer</li>
+          <li>Structuring cutscenes for gameplay integration, not just cinematics</li>
+          <li>Collaborating closely with composers and audio teams</li>
+          <li>Creating immersive worldspace UI</li>
+          <li>Solving problems with limited assets through staging and timing</li>
+          <li>Technical design workflows for real-time narrative delivery</li>
+        </ul>
+
+        <p><a class="back" href="../index.html">← All work</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">&copy; Kevin Tollison</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical design work on Coven, an action RPG: elemental abilities built from scratch with Unreal GAS, C++, Blueprints, Niagara, and FMOD.">
+  <meta name="theme-color" content="#0b0c0f">
+  <title>Coven — Kevin Tollison</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">Kevin Tollison</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#early">Early Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/kevintollison" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="project-header">
+      <div class="wrap">
+        <a class="back" href="../index.html">← All work</a>
+        <h1>Coven</h1>
+        <p class="role-line">Technical Designer  ·  Action RPG</p>
+      </div>
+    </header>
+    <div class="project-body">
+      <div class="wrap">
+
+        <img src="../assets/img/coven/hero.webp" alt="Coven title card: a stylized figure holding a purple flame and a sword." width="1600" height="900" class="hero-img">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/jn0hXXwvYcg" title="Coven" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <h2>Project Overview</h2>
+        <p>Coven is an action RPG with “Zelda-light” combat that is focused on fast ability use, clear reads, and expressive elemental attacks. I joined the team as a Technical Designer to build the game’s magical abilities from scratch using Unreal’s Gameplay Ability System (GAS), C++, Blueprints, Niagara, and FMOD.</p>
+        <p>My work covered design, implementation, tuning, VFX, and audio for the core combat abilities that defined the game’s moment-to-moment fighting style.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/bzlSa3mUubs" title="Coven abilities" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <h2>Ability Design &amp; Implementation</h2>
+        <p>I created a suite of elemental abilities designed to serve distinct gameplay roles and support clear combat readability in a Zelda-style loop. These abilities included:</p>
+        <ul>
+          <li>Homing Fireball – target-tracking projectile</li>
+          <li>Fire Tornado – AoE damage-over-time zone</li>
+          <li>Water Shields &amp; Buffs – defensive/offensive stat modifiers</li>
+          <li>Earth Poison &amp; Vine Roots – DOT + movement slow effects</li>
+          <li>Ice Beam – sustained fire beam with timing-based damage</li>
+        </ul>
+        <p>I implemented abilities using:</p>
+        <ul>
+          <li>C++ (foundations, logic, custom needs)</li>
+          <li>Blueprints (behavior and scripting)</li>
+          <li>GAS for activation, cooldowns, cost, and attribute interaction</li>
+          <li>Gameplay Effects and Attribute Sets for damage, statuses, and scaling</li>
+        </ul>
+        <p>Each ability required designing its purpose, building behavior, syncing timing with animation, and integrating both VFX and audio cues.</p>
+        <h2>Tuning &amp; Combat Feel</h2>
+        <p>To make abilities feel responsive and readable, I tuned:</p>
+        <ul>
+          <li>Damage values and scaling</li>
+          <li>Cooldowns and cast timings</li>
+          <li>Homing behavior</li>
+          <li>Ranges and projectile speeds</li>
+          <li>Status effect durations (DOT, slow, buffs)</li>
+          <li>Telegraph timing/sync with animation</li>
+        </ul>
+        <p>I tested abilities myself and through internal playtests, refining them until they fit the combat rhythm: quick reads, clear intent, and satisfying feedback.</p>
+        <h2>VFX Implementation (Niagara)</h2>
+        <p>I learned Niagara rapidly and created real-time VFX for:</p>
+        <ul>
+          <li>Projectile trails and impact bursts</li>
+          <li>Elemental AoE shapes (tornado, poison, vines)</li>
+          <li>Area telegraphs</li>
+          <li>Shield loops and hit flashes</li>
+          <li>Beam effects for ice attacks</li>
+          <li>GPU/CPU emitters depending on performance needs</li>
+        </ul>
+        <p>Readability was a priority. Abilities needed to be understood instantly from an action-RPG camera distance, with elemental identity and clear timing.</p>
+        <h2>Audio Implementation (FMOD + Unreal)</h2>
+        <p>I handled all technical audio setup for abilities using:</p>
+        <ul>
+          <li>FMOD (events, parameters, blending)</li>
+          <li>Trigger logic inside ability activation</li>
+          <li>Layered audio (cast → travel → impact)</li>
+          <li>Looping transitions for sustained abilities</li>
+          <li>Distance- and pitch-based modulation</li>
+          <li>Timing sync with VFX and animation</li>
+        </ul>
+        <p>This was my first major project using FMOD, and I learned it quickly to support production needs.</p>
+        <h2>Collaboration</h2>
+        <p>I worked closely with:</p>
+        <ul>
+          <li>Animation – syncing timing windows, cast frames, and impacts</li>
+          <li>Engineering – refining GAS behavior and solving technical blockers</li>
+          <li>Design Lead – shaping gameplay roles and combat feel</li>
+          <li>Audio Team/Composer – ensuring FMOD events matched design intent</li>
+        </ul>
+        <p>Typical workflow: prototype → review → sync with animation → refine timing → add VFX → integrate audio → playtest → tune.</p>
+        <h2>Production Constraints</h2>
+        <p>The production environment required fast problem-solving:</p>
+        <ul>
+          <li>Tight deadlines</li>
+          <li>Limited VFX assets early on</li>
+          <li>Needed to learn GAS, Niagara, and FMOD extremely quickly</li>
+        </ul>
+        <p>Despite constraints, I delivered a complete and polished elemental ability set.</p>
+        <h2>Impact</h2>
+        <p>My contributions helped define:</p>
+        <ul>
+          <li>The game’s core elemental combat identity</li>
+          <li>Ability feel, responsiveness, and clarity</li>
+          <li>Stronger feedback through synced audio and VFX</li>
+          <li>A reliable, extendable ability framework for the team</li>
+          <li>Improved internal impressions of combat pacing and readability</li>
+        </ul>
+        <p>Team feedback specifically highlighted:</p>
+        <ul>
+          <li>The homing fireball for its clean tracking and feel</li>
+          <li>The ice tornado/shield for its strong visual impact and clarity</li>
+        </ul>
+        <h2>What I’m Proud Of</h2>
+        <ul>
+          <li>Building full abilities from scratch, not tweaking existing systems</li>
+          <li>Rapidly mastering Niagara, FMOD, and GAS under pressure</li>
+          <li>Creating synced, expressive ability experiences</li>
+          <li>The homing fireball and ice tornado/shield as standout pieces</li>
+        </ul>
+        <h2>What I Learned</h2>
+        <ul>
+          <li>Designing distinct ability roles for action-RPG combat</li>
+          <li>Building C++ → GAS → Blueprint ability architecture</li>
+          <li>Creating readable VFX for a top-down/action camera</li>
+          <li>Implementing and tuning FMOD audio events</li>
+          <li>Aligning gameplay, animation, VFX, and sound into cohesive combat moments</li>
+          <li>Iterative tuning through rapid internal playtesting</li>
+        </ul>
+
+        <p><a class="back" href="../index.html">← All work</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">&copy; Kevin Tollison</div>
+  </footer>
+</body>
+</html>

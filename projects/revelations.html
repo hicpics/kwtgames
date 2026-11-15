@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Technical design and audio work on Revelations, including player systems and puzzle implementation.">
+  <meta name="theme-color" content="#0b0c0f">
+  <title>Revelations — Kevin Tollison</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">Kevin Tollison</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#early">Early Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/kevintollison" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="project-header">
+      <div class="wrap">
+        <a class="back" href="../index.html">← All work</a>
+        <h1>Revelations</h1>
+        <p class="role-line">Lead Technical Designer and Audio Designer</p>
+      </div>
+    </header>
+    <div class="project-body">
+      <div class="wrap">
+
+        <img src="../assets/img/revelations/hero.webp" alt="Stylized artwork of a figure falling between cracked panels, from Revelations." width="1600" height="900" class="hero-img">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/gTggPJ92Ygg" title="Revelations" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p>In this game, the player is tasked with solving puzzles to progress the story and discover who they are. The player will have to solve magic squares, find codes and face many more obstacles.</p>
+        <p>For this game, I was pretty much the lead technical designer and audio designer. I had to finish setting up the player and add a battery system to the flashlight. I also added a sanity system to the player. Eventually, I added a hint system as well. Unfortunately, these did not make it into the final game.</p>
+        <p>I ended up implementing a majority of the puzzles into the game. One of the first ones was a sliding block that was designed to open a locked door. I also implemented a match-three puzzle type thing, a code pad, and a lever system. I also ended up having to heavily modify the magic square puzzle to fit with the rest of the systems.</p>
+        <p>Here's a video of the tutorial level showing off some of the puzzles and everything that I worked on.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/2x8V6_h_9Gc" title="Revelations tutorial level" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p>For the audio, I ended up using Unreal's built-in audio system which wasn't too bad. However, coming from an audio background I found it a bit hard to navigate. Eventually, I discovered FMOD and I wish I had used it from the beginning. I did however use it on another project.</p>
+        <p>If you would like a copy of the game let me know.</p>
+
+        <p><a class="back" href="../index.html">← All work</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">&copy; Kevin Tollison</div>
+  </footer>
+</body>
+</html>

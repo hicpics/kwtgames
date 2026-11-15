@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lead combat design case study for King David&#x27;s Battles, a mobile action RPG, including a readability pass on the Bear Boss slash attack that improved Chapter 1 retention.">
+  <meta name="theme-color" content="#0b0c0f">
+  <title>King David&#x27;s Battles — Kevin Tollison</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="../index.html">Kevin Tollison</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#work" aria-current="page">Work</a>
+        <a href="../index.html#early">Early Work</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/kevintollison" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="project-header">
+      <div class="wrap">
+        <a class="back" href="../index.html">← All work</a>
+        <h1>King David's Battles</h1>
+        <p class="role-line">Lead Combat Designer  ·  Mobile Action RPG</p>
+      </div>
+    </header>
+    <div class="project-body">
+      <div class="wrap">
+
+        <img src="../assets/img/king-davids-battles/hero.webp" alt="Key art for King David&#x27;s Battles, with a young fighter facing a giant king." width="688" height="360" class="hero-img">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/m4RF4CuQD1g" title="King David&#x27;s Battles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/vDvu2-XKyQc" title="King David&#x27;s Battles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <figure class="still-frame"><img src="../assets/img/king-davids-battles/key-art.webp" alt="Key art of a small fighter standing before a towering king in King David&#x27;s Battles." width="1600" height="900" loading="lazy"></figure>
+        <h2>Project Overview</h2>
+        <p>King David’s Battles is a fast, top-down action RPG built for mobile. The goal was to create a combat experience that felt quick, tactical, readable, and accessible to a broad audience.</p>
+        <p>I worked on the project for around eight months as the Lead Combat Designer, owning combat design from start to finish. My responsibilities included designing, tuning, and balancing:</p>
+        <ul>
+          <li>Player character abilities</li>
+          <li>Enemies and bosses</li>
+          <li>Weapons, armor, and power-up systems</li>
+          <li>Combat pacing and encounter flow</li>
+          <li>Level layouts and enemy compositions</li>
+        </ul>
+        <p>I built an Excel system to simulate and tune damage values, timing windows, and overall combat balance throughout development.</p>
+        <p>The team was small, five people total with one engineer and two artists, and team members were regularly pulled onto other projects. This meant combat needed to be built efficiently, iterated quickly, and designed with production constraints in mind. The entire game needed to ship within 8–12 months.</p>
+        <h2>Combat Goals</h2>
+        <p>We wanted early combat encounters to be:</p>
+        <ul>
+          <li>Fast and tactical</li>
+          <li>Readable at a glance</li>
+          <li>Challenging but fair</li>
+          <li>Casual-friendly, without punishing players early</li>
+        </ul>
+        <p>From a design perspective, Chapters 1 and 2 needed to onboard players smoothly without creating early frustration. Both the design vision and analytics supported this: early deaths were strongly correlated with churn, especially on mobile.</p>
+        <div class="clip-row">
+          <figure class="clip portrait"><video autoplay loop muted playsinline preload="metadata" aria-label="Combat footage"><source src="../assets/img/king-davids-battles/combat-2.mp4" type="video/mp4"></video><figcaption>Combat footage</figcaption></figure>
+          <figure class="clip portrait"><video autoplay loop muted playsinline preload="metadata" aria-label="Bandit combat"><source src="../assets/img/king-davids-battles/combat-bandit.mp4" type="video/mp4"></video><figcaption>Bandit combat</figcaption></figure>
+        </div>
+        <h2>A Problem: Bear Boss Slash Attack</h2>
+        <p>The Bear Boss was the first major challenge in the game. A checkpoint moment intended to test player understanding without causing frustration.</p>
+        <p>Early user tests and analytics revealed a clear issue:</p>
+        <ul>
+          <li>Players were consistently dying to the Bear Boss’s slash attack</li>
+          <li>The boss fight, designed to be easy, was performing as a huge difficulty spike</li>
+          <li>The attack had poor readability</li>
+          <li>Rage quits increased sharply during this encounter</li>
+          <li>Players routinely quit the game after dying more than once in Chapter 1</li>
+        </ul>
+        <p>The core problem: the slash attack’s telegraph was nearly invisible. The animation had almost no anticipation, and the VFX didn’t communicate timing or direction. Players couldn’t tell when to dodge, making the fight feel unfair.</p>
+        <h2>Investigation</h2>
+        <p>Watching playtest footage and reviewing user feedback made the problem clear:</p>
+        <ul>
+          <li>The attack fired too fast</li>
+          <li>The wind-up had no noticeable anticipation</li>
+          <li>The VFX blended into the environment</li>
+          <li>The timing windows were too tight for casual players</li>
+          <li>Players dodged after they were hit, believing they reacted correctly</li>
+        </ul>
+        <p>At first, I assumed the boss was overtuned. But tuning numbers alone couldn’t fix what was fundamentally a readability issue.</p>
+        <h2>Iteration Process</h2>
+        <h3>1. VFX Redesign</h3>
+        <p>We added a phantom bear claw VFX, and a red progression bar type thing to show when and where the attack would happen, synced directly to the hitbox.</p>
+        <p>This visual effect:</p>
+        <ul>
+          <li>Created a clear shape and direction for the attack</li>
+          <li>Provided brighter contrast against the environment</li>
+          <li>Matched the attack frame so players understood exactly when the hit landed</li>
+        </ul>
+        <p>This alone dramatically improved clarity.</p>
+        <h3>2. Animation Update</h3>
+        <p>I worked with animation to request:</p>
+        <ul>
+          <li>A new, stretchable wind-up animation</li>
+          <li>An anticipation pose where the bear raises its paw</li>
+          <li>A short, readable pause before the slash</li>
+        </ul>
+        <p>This allowed us to retime the attack without requiring new animation work every iteration.</p>
+        <h3>3. Timing Adjustment</h3>
+        <p>I increased the attack wind-up:</p>
+        <ul>
+          <li>The bear lifts its paw</li>
+          <li>Holds for a brief, readable moment</li>
+          <li>Then performs the slash</li>
+        </ul>
+        <p>Timing became predictable but still challenging. I also made minimal damage adjustments, but the primary fix was clarity and anticipation.</p>
+        <h3>4. Iteration Cycles</h3>
+        <p>We ran 2–3 rounds of user testing.</p>
+        <p>Each round resulted in:</p>
+        <ul>
+          <li>Higher dodge success rates</li>
+          <li>Fewer frustrated reactions</li>
+          <li>Clearer understanding of the attack</li>
+          <li>Reduced early churn</li>
+          <li>Players describing the fight as fun instead of cheap</li>
+        </ul>
+        <p>Every iteration brought the boss closer to the intended difficulty curve.</p>
+        <h2>Outcome</h2>
+        <p>After the updates:</p>
+        <ul>
+          <li>Players immediately read the attack properly</li>
+          <li>Rage quits during the fight dropped</li>
+          <li>Retention in Chapter 1 improved</li>
+          <li>Playtesters described the boss as fun to fight, not frustrating</li>
+          <li>The challenge level remained intact without punishing new players</li>
+        </ul>
+        <p>The final version hit its goal: challenging but readable, exciting but fair.</p>
+        <p>Analytics and feedback both confirmed the success of the changes.</p>
+        <figure class="clip portrait"><video autoplay loop muted playsinline preload="metadata" aria-label="Bear boss slash attack"><source src="../assets/img/king-davids-battles/combat-bear.mp4" type="video/mp4"></video><figcaption>Bear boss slash attack</figcaption></figure>
+        <div class="clip-row">
+          <figure class="clip portrait"><video autoplay loop muted playsinline preload="metadata" aria-label="Combat bounce-back"><source src="../assets/img/king-davids-battles/combat-bounceback.mp4" type="video/mp4"></video><figcaption>Combat bounce-back</figcaption></figure>
+          <figure class="clip portrait"><video autoplay loop muted playsinline preload="metadata" aria-label="Combat clip"><source src="../assets/img/king-davids-battles/combat-clip.mp4" type="video/mp4"></video><figcaption>Combat clip</figcaption></figure>
+        </div>
+        <h2>Key Learnings</h2>
+        <ul>
+          <li>Strong telegraphs (VFX + animation + timing) are essential for mobile readability</li>
+          <li>Stretchable, modular animations make tuning far more efficient</li>
+          <li>Listen closely to player feedback, as it can tell you when something feels unfair</li>
+          <li>Early-game difficulty must balance challenge with retention</li>
+          <li>Even small timing changes can dramatically improve player experience</li>
+          <li>Readability and fairness matter more to players than raw difficulty numbers</li>
+        </ul>
+        <h2>Ripple Effects</h2>
+        <p>After solving this issue, I reviewed other bosses and enemies to ensure their attacks had:</p>
+        <ul>
+          <li>Clear telegraphs</li>
+          <li>Strong VFX</li>
+          <li>Tunable timing windows</li>
+          <li>Readable silhouettes and anticipation</li>
+        </ul>
+        <p>This helped raise overall combat clarity across the game.</p>
+        <figure class="still-frame portrait"><img src="../assets/img/king-davids-battles/loading.webp" alt="Loading screen for King David&#x27;s Battles." width="1170" height="2532" loading="lazy"></figure>
+
+        <p><a class="back" href="../index.html">← All work</a></p>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">&copy; Kevin Tollison</div>
+  </footer>
+</body>
+</html>
